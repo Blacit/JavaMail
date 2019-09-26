@@ -18,15 +18,15 @@ public class Main {
     // ОБЯЗАТЕЛЬНЫЕ ПОЛЯ ДЛЯ ЗАПОЛНЕНИЯ.
     private static final String themes = "Spamming"; // Заголовок письма
     private static final String text = "Hello, my friend"; // Текстовое сообщение
-    private static final String username = "vgilenko@bk.ru"; // Отправитель mail
-    private static final String password = "BlacitGold2000"; // Отправитель password
+    private static final String username = "ПОЧТА@bk.ru"; // Отправитель mail
+    private static final String password = "PASSWORD"; // Отправитель password
     private static final String filepath = "D:\\Blacit Secret\\Группа вк\\Java Help\\hi.png"; // Путь к вложению (необязательно)
 
     public static void main(String[] args) throws MessagingException, ArrayIndexOutOfBoundsException {
         String FromMail = "";
 
         //Любая почта, вот для примера:
-        mail.add("vgilenko@bk.ru");
+        mail.add("ПОЧТА@bk.ru");
         //mail.add("ПОЧТА@yandex.ru");
         //mail.add("ПОЧТА@gmail.com);
         //mail.add("ПОЧТА@bk.ru");

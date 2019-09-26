@@ -10,8 +10,6 @@ import java.util.Properties;
 
 /*
 Можно отправлять сообщения с вложением, программа уже на это настроена.
-Если вы этого делать не захотите, то нужно: закомментировать filepath, в 42 и 52 строке убрать filepath, с 66 по 77 закомментировать.
-Раскомментировать строку 66 строку.
  */
 
 public class Main {
@@ -20,19 +18,18 @@ public class Main {
     // ОБЯЗАТЕЛЬНЫЕ ПОЛЯ ДЛЯ ЗАПОЛНЕНИЯ.
     private static final String themes = "Spamming"; // Заголовок письма
     private static final String text = "Hello, my friend"; // Текстовое сообщение
-    private static final String username = "ПОЧТА@mail.ru"; // Отправитель mail
-    private static final String password = "PASSWORD"; // Отправитель password
-    private static final String filepath = "D:\\hi.png"; // Путь к вложению
+    private static final String username = "vgilenko@bk.ru"; // Отправитель mail
+    private static final String password = "BlacitGold2000"; // Отправитель password
+    private static final String filepath = "D:\\Blacit Secret\\Группа вк\\Java Help\\hi.png"; // Путь к вложению (необязательно)
 
     public static void main(String[] args) throws MessagingException, ArrayIndexOutOfBoundsException {
         String FromMail = "";
 
         //Любая почта, вот для примера:
-        mail.add("ПОЧТА@bk.ru");
+        mail.add("vgilenko@bk.ru");
         //mail.add("ПОЧТА@yandex.ru");
         //mail.add("ПОЧТА@gmail.com);
         //mail.add("ПОЧТА@bk.ru");
-
 
         for (int i = 0; i < mail.size(); i++) {
             try {
@@ -68,19 +65,24 @@ public class Main {
                 //message.setText(text);
                 //Файл вложения
                 File file = new File(filepath);
-                MimeMultipart multipart = new MimeMultipart();
-                MimeBodyPart part1 = new MimeBodyPart();
-                part1.addHeader("Content-Type", "text/plain; charset=UTF-8");
-                part1.setDataHandler(new DataHandler(text, "text/plain; charset=\"utf-8\""));
-                multipart.addBodyPart(part1);
+                if (file.exists() == true) {
+                    MimeMultipart multipart = new MimeMultipart();
+                    MimeBodyPart part1 = new MimeBodyPart();
+                    part1.addHeader("Content-Type", "text/plain; charset=UTF-8");
+                    part1.setDataHandler(new DataHandler(text, "text/plain; charset=\"utf-8\""));
+                    multipart.addBodyPart(part1);
 
-                MimeBodyPart part2 = new MimeBodyPart();
-                part2.setFileName(MimeUtility.encodeWord(file.getName()));
-                part2.setDataHandler(new DataHandler(new FileDataSource(file)));
-                multipart.addBodyPart(part2);
-                message.setContent(multipart);
-
-                Transport.send(message);
+                    MimeBodyPart part2 = new MimeBodyPart();
+                    part2.setFileName(MimeUtility.encodeWord(file.getName()));
+                    part2.setDataHandler(new DataHandler(new FileDataSource(file)));
+                    multipart.addBodyPart(part2);
+                    message.setContent(multipart);
+                    Transport.send(message);
+                }
+                else {
+                    message.setText(text);
+                    Transport.send(message);
+                }
             } catch (Exception ignored) {
             }
         }

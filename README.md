@@ -1,6 +1,4 @@
 # JavaMail
-My First Project
-
 
 My first program that I publish on Github. 
 It's free to use. 

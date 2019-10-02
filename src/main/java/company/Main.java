@@ -8,28 +8,24 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Properties;
 
-/*
-Можно отправлять сообщения с вложением, программа уже на это настроена.
- */
-
 public class Main {
-    private static ArrayList<String> mail = new ArrayList<>(); // Добавляем в список почты
+    private static ArrayList<String> mail = new ArrayList<>(); // Add to mail list
 
-    // ПОЛЯ ДЛЯ ЗАПОЛНЕНИЯ.
-    private static final String themes = "Spamming"; // Заголовок письма (необязательно)
-    private static final String text = "Hello, my friend"; // Текстовое сообщение (необязательно)
-    private static final String username = "ПОЧТА@bk.ru"; // Отправитель mail (обязательно)
-    private static final String password = "ПАРОЛЬ"; // Отправитель password (обязательно)
-    private static final String filepath = "D:\\hi.png"; // Путь к вложению (необязательно)
+    // FIELDS TO FILL IN.
+    private static final String themes = "Spamming"; // The title of the letter (optional)
+    private static final String text = "Hello, my friend"; // Text message (optional)
+    private static final String username = "ПОЧТА@bk.ru"; // Mail sender (required)
+    private static final String password = "ПАРОЛЬ"; // Sender password (required)
+    private static final String filepath = "D:\\hi.png"; // Path to attachment (optional)
 
     public static void main(String[] args) throws ArrayIndexOutOfBoundsException {
         String FromMail = "";
 
-        //Любая почта, вот для примера:
+        //Any mail, here is for examples:
         mail.add("ПОЧТА@bk.ru");
-        //mail.add("ПОЧТА@yandex.ru");
-        //mail.add("ПОЧТА@gmail.com);
-        //mail.add("ПОЧТА@bk.ru");
+        //mail.add("MAIL@yandex.ru");
+        //mail.add("MAIL@gmail.com);
+        //mail.add("MAIL@bk.ru");
 
         for (int i = 0; i < mail.size(); i++) {
             try {

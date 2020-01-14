@@ -1,6 +1,4 @@
 # JavaMail
 
-My first program that I publish on Github. 
-It's free to use. 
-She can: to send messages on any number of mails and any mail. 
-It is also possible to add attachments to messages, you just need to show the path.
+The program sends messages to any number of mails.
+To be able to add attachments to messages, you just need to specify the path.
